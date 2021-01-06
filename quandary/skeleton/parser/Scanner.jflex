@@ -63,12 +63,13 @@ white_space = {new_line} | [ \t\f]
 /* int literals */
 {IntLiteral} { return symbol("Intconst", INTCONST, new Long(Long.parseLong(yytext()))); }
 
-/* separators */
+/* operators and punctuation */
 "+"               { return symbol("+",  PLUS); }
 "-"               { return symbol("-",  MINUS); }
 "*"               { return symbol("*",  TIMES); }
 "("               { return symbol("(",  LPAREN); }
 ")"               { return symbol(")",  RPAREN); }
+";"               { return symbol(";",  SEMICOLON); }
 
 /* comments */
 "/*" [^*] ~"*/" | "/*" "*"+ "/"
