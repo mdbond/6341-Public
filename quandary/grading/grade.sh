@@ -35,8 +35,8 @@ do_one_test() {
         else
             echo FAILED
         fi
-        echo REF_OUT is $REF_OUT # Enable for debugging
-        echo SUB_OUT is $SUB_OUT # Enable for debugging
+        #echo REF_OUT is $REF_OUT # Enable for debugging
+        #echo SUB_OUT is $SUB_OUT # Enable for debugging
     fi
 }
 
