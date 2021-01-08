@@ -1,0 +1,20 @@
+1 badchar.q    42
+1 badparse.q   42
+1 minus2.q 42           # no calls, no stmtlist, no vars
+1 minus3.q 5            # no calls, no stmtlist
+1 sBasicCond.q 42       # no calls, no vars
+1 sBasicNested.q 4      # no calls
+1 sMoreCond.q 44        # no calls
+1 sMoreNested.q 4       # no calls
+1 sCondError.q 4        # no calls
+1 square.q 35           # no calls, no stmtlist
+1 abs.q -34632          # no calls
+1 conds.q 42            # no calls, no vars
+1 conds2.q 42           # no calls, no vars
+1 vars.q  42            # no calls
+1 sosimple.q 42         # no calls, no stmtlist, no vars
+1 compound.q 22         # no calls
+1 oops.q 22             # no calls
+1 morevars.q 42         # no calls
+1 isPrime.q 17          # no calls
+0 isrefint.q 42         # should fail
