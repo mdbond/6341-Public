@@ -1,0 +1,10 @@
+1 isPrime.q 13
+1 abs.q -392
+1 arithmetic_test.q 8
+1 sBasicCondelse.q 16
+1 logicCond.q -30
+1 not2.q 1000
+1 sBasicNested.q 20
+1 vars.q 35
+1 sCondError.q 34  # error.
+1 minus3.q 22
