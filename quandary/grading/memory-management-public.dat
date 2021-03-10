@@ -1,3 +1,4 @@
+0 isrefint.q   42    -gc MarkSweep -heapsize 1638400
 1 fibserial.q  20    -gc MarkSweep -heapsize 16384
 1 fibfree.q    20    -gc Explicit  -heapsize 16384
 1 primes.q    100    -gc MarkSweep -heapsize   800
@@ -68,4 +69,4 @@
 1 twoCells.q 2000 -gc MarkSweep -heapsize 24
 1 randomList.q 20 -gc MarkSweep -heapsize 480
 1 randomList.q 20 -gc NoGC -heapsize 480
-0 isrefint.q 42 -heapsize 1638400
+0 isrefint.q 42 -gc NoGC -heapsize 1638400
