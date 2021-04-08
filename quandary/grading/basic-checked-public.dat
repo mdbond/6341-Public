@@ -87,8 +87,8 @@
  1      depcast.q       1 -heapsize 1638400
  1        fact2.q      20 -heapsize 1638400
  1        flip2.q     200 -heapsize 1638400
- 1      garbage.q 1000000 -heapsize 1638400
- 1     garbage2.q 1000000 -heapsize 1638400
+ 1      garbage.q   10000 -heapsize 1638400
+ 1     garbage2.q   10000 -heapsize 1638400
  1    goodlists.q      40 -heapsize 1638400
  1         heap.q       2 -heapsize 1638400
  1     inputdep.q       1 -heapsize 1638400
@@ -105,7 +105,7 @@
  1          sum.q      42 -heapsize 1638400
  1     temproot.q     100 -heapsize 1638400
  1    temproot2.q      10 -heapsize 1638400
- 1     twoCells.q 1000000 -heapsize 1638400
+ 1     twoCells.q   10000 -heapsize 1638400
  1     updates3.q      42 -heapsize 1638400
  1 ssetRightandLeft.q 42 -heapsize 1638400
  1 sfact.q 6 -heapsize 1638400
@@ -131,7 +131,7 @@
  1            third.q      20 -heapsize 1638400
  1          append3.q      42 -heapsize 1638400
  1           cycles.q      15 -heapsize 1638400
- 1         garbage2.q  200000 -heapsize 1638400
+ 1         garbage2.q   20000 -heapsize 1638400
  1      sideeffect3.q      10 -heapsize 1638400
  1             nils.q      42 -heapsize 1638400
  1         sortdet4.q      42 -heapsize 1638400
