@@ -1,3 +1,4 @@
+ 0 isrefint.q 42 -heapsize 1638400
  1 ssetRightandLeft.q      42 -heapsize 1638400
  1 sfact.q                  6 -heapsize 1638400
  1 sCheckParams.q           8 -heapsize 1638400
@@ -68,4 +69,28 @@
  1    temproot2.q          10 -heapsize 1638400
  1     twoCells.q     1000000 -heapsize 1638400
  1     updates3.q          42 -heapsize 1638400
- 0     isrefint.q          42 -heapsize 1638400
+2 sNewmanConwaySequence.q 16 -heapsize 1638400
+2 updates5.q 8 -heapsize 1638400
+2 sideeffect3.q 15 -heapsize 1638400
+2 sLCS.q 14 -heapsize 1638400
+2 jumpGame.q 3 -heapsize 1638400
+2 fibserial.q 8 -heapsize 1638400
+2 subarrayProductLessK.q 3 -heapsize 1638400
+2 sReplace.q 45 -heapsize 1638400
+2 sGetMin.q 13 -heapsize 1638400
+2 noisyMutablePara.q 25 -heapsize 1638400
+2 randomList.q 15 -heapsize 1638400
+2 attackDuration.q 3 -heapsize 1638400
+2 garbage2.q     1000000 -heapsize 1638400
+2 updates.q           42 -heapsize 1638400
+2 primes2.q          200 -heapsize 1638400
+2 serialbubblish.q    42 -heapsize 1638400
+2 fibserial.q         20 -heapsize 1638400
+2 equiv.q             42 -heapsize 1638400
+2 mixedtypes.q        42 -heapsize 1638400
+2 listoflists.q       42 -heapsize 1638400
+2 cycle.q             42 -heapsize 1638400
+2 mutation.q          42 -heapsize 1638400
+2 serialqsort.q       42 -heapsize 1638400
+2 insertionsort.q     42 -heapsize 1638400
+0 isrefint.q          42 -heapsize 1638400
