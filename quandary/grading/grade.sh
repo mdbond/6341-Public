@@ -44,8 +44,8 @@ do_one_test() {
     # echo SUB_OUT is $SUB_OUT
 }
 
-if [ "$#" -ne 4 ] && [ "$#" -ne 5 ]; then
-    echo Usage: grade.sh SUBMISSION_TGZ REF_IMPL TESTCASES_FILE TESTCASE_DIR [TIMEOUT_IN_SECONDS]
+if [ "$#" -ne 5 ] && [ "$#" -ne 6 ]; then
+    echo Usage: grade.sh SUBMISSION_TGZ REF_IMPL TESTCASES_FILE TESTCASE_DIR DEFAULT_MAKEFILE [TIMEOUT_IN_SECONDS]
     exit
 fi
 
@@ -72,14 +72,16 @@ if ! [ -x "$(command -v realpath)" ]; then
     REF_IMPL="../$2"
     TESTCASES_FILE="../$3"
     TESTCASE_DIR="../$4"
+    DEFAULT_MAKEFILE=$(realpath --relative-to=$SUBMISSION_DIR $5)
 else
     REF_IMPL=$(realpath --relative-to=$SUBMISSION_DIR $2)
     TESTCASES_FILE=$(realpath --relative-to=$SUBMISSION_DIR $3)
     TESTCASE_DIR=$(realpath --relative-to=$SUBMISSION_DIR $4)
+    DEFAULT_MAKEFILE=$(realpath --relative-to=$SUBMISSION_DIR $5)
 fi
 TIMEOUT=""
-if [ "$#" -eq 5 ]; then
-    TIMEOUT="timeout $5"
+if [ "$#" -eq 6 ]; then
+    TIMEOUT="timeout $6"
 fi
 
 # Extract the submitted .tgz to a new directory
@@ -87,22 +89,36 @@ echo Extracting submission to $SUBMISSION_DIR, will perform testing there
 gzip -cd "$SUBMISSION_TGZ" | tar xf - -C $SUBMISSION_DIR
 
 # Build the submitted project
+SUBMISSION_DIR=$(realpath $SUBMISSION_DIR)
 cd $SUBMISSION_DIR
+COMPILE_SUCCESS=1
 make clean && make
 if [[ $? -ne 0 ]]; then
     echo WARNING: Couldn\'t run make. Is the .tgz directory structure incorrect?
     ACTUAL_MAKEFILE=$(find | grep '/Makefile\|/makefile')
-    if [[ ! -f $ACTUAL_MAKEFILE ]]; then exit 1; fi
-    ACTUAL=$(dirname $ACTUAL_MAKEFILE)
-    REF_IMPL=$(realpath --relative-to=$ACTUAL $REF_IMPL)
-    TESTCASES_FILE=$(realpath --relative-to=$ACTUAL $TESTCASES_FILE)
-    TESTCASE_DIR=$(realpath --relative-to=$ACTUAL $TESTCASE_DIR)
-    echo Found $ACTUAL_MAKEFILE, trying to build and execute from $ACTUAL...
-    cd $ACTUAL
-    make clean && make
-    if [[ $? -ne 0 ]]; then
-        exit 1
+    if [[ ! -f $ACTUAL_MAKEFILE ]]; then 
+        COMPILE_SUCCESS=0
+    else
+        ACTUAL=$(dirname $ACTUAL_MAKEFILE)
+        REF_IMPL=$(realpath --relative-to=$ACTUAL $REF_IMPL)
+        TESTCASES_FILE=$(realpath --relative-to=$ACTUAL $TESTCASES_FILE)
+        TESTCASE_DIR=$(realpath --relative-to=$ACTUAL $TESTCASE_DIR)
+        echo Found $ACTUAL_MAKEFILE, trying to build and execute from $ACTUAL...
+        cd $ACTUAL
+        COMPILE_SUCCESS=true
+        make clean && make
+        if [[ $? -ne 0 ]]; then
+            COMPILE_SUCCESS=0
+        fi
     fi
+fi
+
+if [ $COMPILE_SUCCESS -eq 0 ]; then
+    echo Compile using the default Makefile
+    cd $SUBMISSION_DIR
+    cp $DEFAULT_MAKEFILE $SUBMISSION_DIR
+    make clean && make
+    if [[ $? -ne 0 ]]; then exit 1; fi
 fi
 
 # Test each test case
