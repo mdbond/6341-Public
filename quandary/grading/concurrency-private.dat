@@ -1,0 +1,19 @@
+0 isrefint.q 42 -heapsize 1638400
+2 drfcounter6.q 0 -heapsize 1638400 # relies on concurrent execution
+2 drfcounter5.q 10000 -heapsize 1638400 # relies on concurrent execution
+2 pcc2.q 12 -heapsize 1638400 # relies on concurrent execution
+2 pcfixed6.q 42 -heapsize 1638400 # relies on concurrent execution
+2 turns4.q 40 -heapsize 1638400 # relies on concurrent execution
+2 pcfixed5.q 42 -heapsize 1638400 # relies on concurrent execution
+2 steps6.q 30 -heapsize 1638400 # relies on concurrent execution
+2 steps8.q 42 -heapsize 1638400 # relies on concurrent execution
+2 indep4.q 10000 -heapsize 1638400
+2 indep3.q 40 -heapsize 1638400
+2 fibpar3.q 19 -heapsize 1638400
+2 concsum3.q 300 -heapsize 1638400
+2 bubblishsort5.q 42 -heapsize 1638400
+2 sharedctr.q 100 -heapsize 1638400
+2 qsort5.q 42 -heapsize 1638400
+2 qsort6.q 42 -heapsize 1638400
+2 concsum2.q 36 -heapsize 1638400
+0 isrefint.q 42 -heapsize 1638400
