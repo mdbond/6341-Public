@@ -1,5 +1,5 @@
-### 6341-Public
+### (Non-Quandary) code examples for CSE 6341
 
-`quandary` contains everything related to the Quandary language
+`concurrency` corresponds to the Concurrency topic.
 
-`other` contains everything else
+`smt` has some fun examples that use SMT solving.
